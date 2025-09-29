@@ -143,6 +143,8 @@ router.post('/',
     body('preparation')
         .notEmpty().withMessage('El campo preparation no puede ir vacio')
         .isString().withMessage('El campo preparation no puede ser un numero'),
+    body('difficulty')
+        .notEmpty().withMessage('El campo difficulty no puede ir vacio'),
     handleInputErrors,
     createRecipe)
 /**
@@ -211,6 +213,8 @@ router.put('/:id',
         .isString().withMessage('El campo preparation no puede ser un numero'),
     body('revised')
         .isBoolean().withMessage('El valor para el campo'),
+    body('difficulty')
+        .notEmpty().withMessage('El campo difficulty no puede ir vacio'),
     handleInputErrors,
     updateRecipe)
 /**
